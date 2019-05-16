@@ -6,17 +6,15 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Yummy Theme # ex. I m Chuan
-name: Your Name # ex. DONGChuan
-email: my_email_address@lalala.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
-github_url: my_github_url # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
+title: BlogPage  # ex. name
+name: Ranga Chari # ex. DONGChuan
+email: vinjamuri.r@husky.neu.edu
+location: Boston # ex. Nice, France
+github_url: https://github.com/ranga11 # ex. https://github.com/DONGChuan
+github_username: ranga11 # ex. DONGChuan
 description: description_of_your_web_site
-favicon: favicon.png # Image must be in assets/images
-repository: github_username/github_username.github.io # ex. DONGChuan/DONGChuan.github.io
+#favicon: favicon.png # Image must be in assets/images
+repository: ranga11/ranga11.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
@@ -87,7 +85,7 @@ analytics :
 
 
 # For about.html. Fell free to create your own!
-skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_software_keywords: [Python, MySQL, Oracle, SQLite, PL/SQL,Microsoft SQL Server, Oracle DB, PostgreSQL, MongoDB, MS Access, Power Point, Data Mining]
+#skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
 skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
 skill_mobile_app_keywords: [Android, Sketch UI Desgin]
