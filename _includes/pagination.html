@@ -1,37 +1,15 @@
-{% if paginator.total_pages > 1 %}
-<div class="pagination text-align">
-    <div class="btn-group">
-
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="/" class="btn btn-outline">&laquo;</a>
-        {% else %}
-        <a href="/page{{paginator.previous_page}}" class="btn btn-outline">&laquo;</a>
-        {% endif %}
-        {% else %}
-        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&laquo;</button>
-        {% endif %}
-
-        {% if paginator.page == 1 %}
-        <a href="javascript:;" class="active btn btn-outline">1</a>
-        {% else %}
-        <a href="/" class="btn btn-outline">1</a>
-        {% endif %}
-
-        {% for count in (2..paginator.total_pages) %}
-        {% if count == paginator.page %}
-        <a href="javascript:;" class="active btn btn-outline">{{count}}</a>
-        {% else %}
-        <a href="/page{{count}}" class="btn btn-outline">{{count}}</a>
-        {% endif %}
-        {% endfor %}
-
-        {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}" class="btn btn-outline">&raquo;</a>
-        {% else %}
-        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&raquo;</button>
-        {% endif %}
-
-    </div>
-</div>
-{% endif %}
+<nav class="pagination">
+  {% capture category_name %}{{ page.categories | first }}{% endcapture %}
+  {% for post in site.categories.[category_name] %}
+    {% if post.url == page.url %}
+      {% assign post_index0 = forloop.index0 %}
+      {% assign post_index1 = forloop.index %}
+    {% endif %}
+  {% endfor %}
+  {% for post in site.categories.[category_name] %}
+    {% if post_index0 == forloop.index %}{% assign next_post = post %}{% endif %}
+    {% if post_index1 == forloop.index0 %}{% assign prev_post = post %}{% endif %}
+  {% endfor %}
+  {% if prev_post %}<a class="prev" href="{{ site.url }}{{ prev_post.url }}">{{ prev_post.title }}</a>{% endif %}
+  {% if next_post %}<a class="next" href="{{ site.url }}{{ next_post.url }}">{{ next_post.title }}</a>{% endif %}
+</nav>
